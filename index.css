@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize images for better loading */
+img {
+  content-visibility: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hardware acceleration for transforms */
+.transform,
+[class*="translate"],
+[class*="scale"],
+[class*="rotate"] {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize scrolling */
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
