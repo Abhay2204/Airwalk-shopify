@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Keep public folder for Vercel deployment
+!public/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
